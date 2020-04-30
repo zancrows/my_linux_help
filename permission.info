@@ -1,0 +1,46 @@
+ rwxr-xr--
+ \ /\ /\ /
+  v  v  v
+  |  |  droits des autres utilisateurs (o)
+  |  |
+  |  droits des utilisateurs appartenant au groupe (g)
+  |
+ droits du propriétaire (u)
+
+
+0 = 000
+1 = 001
+2 = 010
+3 = 011
+4 = 100
+5 = 101
+6 = 110
+7 = 111
+
+d : répertoire
+l : lien symbolique
+c : périphérique de type caractère
+b : périphérique de type bloc
+p : pipe (FIFO) pour "tube" ou "tuyau" en anglais ou pipeline aussi en 'français'
+s : socket
+- : fichier classique
+
+# la lettre s ou S peut remplacer le x pour le indiquer un SUID ou SGID
+# un t indique le glag du sticky bit
+# le SUID possède la valeur 4 ex : 4755
+# le SGID possède la valeur 2 ex 2755
+# le sticky bit possède la valeur 1 ex 1755
+
+# pour un controle plus fin des droits par exemple gérer des droits
+# d'utilisateur différent il faut installer un paquet ex: acl
+# dans ce cas la  le fichier disposant d'un acl aura une notation avec un +
+# ex:  -rwxr--r--+
+
+[chmod]
+<droit> <cible> : modifie les droits de la cible
+
+[chown]
+# change le propriétaire
+
+[chgrp]
+# chgrp permet de changer le groupe d'utilisateur possédant un fichier ou un dossier

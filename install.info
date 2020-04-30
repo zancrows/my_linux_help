@@ -1,0 +1,39 @@
+
+# pour installer un paquet manuellement:
+git clone <le dépôt>
+cd <dossier>
+makepkg
+makepkg --install
+
+[makepkg]
+--nocheck: ne lance pas la fonction check lors de la compilation
+--install: install l'application
+
+[pacman/yay]
+# gestionnaire de paquet
+# pacman stocke les paquets téléchargés ici /var/cache/pacman/pkg/
+# il n'enlève pas automatiquement les versions anciennes ou désinstallées
+-S <app>:   installation de l'application
+-Syu:       Synchronise les dépôts et fait les mises à jour
+-Syyuu:     idem -Syu mais force une resynchronisation
+-Rs:        supprimer proprement, supprime les fichier de conf etc...
+-Rsn:       pour supprimer les archives des fichiers de conf
+-Qs:        rechercher un paquet parmis ceux installé
+-Qi:        information sur un paquet installé
+-Ss:        rechercher un paquet dans les dépôts
+-Si:        information sur un paquet dans les dépôts
+-Qdt:       liste les paquets qui ne sont plus requis par le système
+#   ->  /!\ ne comprend pas les paquets insstallés manuellements
+-Qqk:       verifier qu'il ne manque pas de fichier sur l'ensemble  paquet
+-Sc:        Supprime tous les paquets non installé du cache
+
+[pacleaner]
+# à installer
+-m:         vérifier les paquets à supprimer sauf les 3 dernières versions
+-u:         liste les paquets non installés
+--delete:   à utiliser avec les 2 options précédentes pour supprimer les paquets
+
+[ajout de depot]
+1:  Ajouter dans  /etc/pacman.conf -->  Server = <lien du repository>
+2:  sudo pacman-key -r <key>
+3:  sudo pacman-key --lsign-key <key>

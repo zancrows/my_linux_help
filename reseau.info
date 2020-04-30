@@ -1,0 +1,7 @@
+
+[nmcli]
+# gestion des connections réseaux
+nmcli r wifi [on/off]:  voir le statut,activer ou désacticer l'interface wifi
+nmcli con show: montre les spots wifi à proximité
+nmcli dev: montre les device du pc et leur statut
+nmcli dev wifi connect  <SSID> password <passwd>:    se connecter à un spot wifi

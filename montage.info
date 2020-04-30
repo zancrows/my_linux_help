@@ -1,0 +1,25 @@
+Pour info :
+- La commande mount ne monte rien du tout. Elle attache un système de fichiers à l'arborescence du système de fichiers racine.
+- Un disque ne peut être monté : C'est le système de fichiers d'une partition du disque qui est attachable à l'arborescence du système de fichiers racine.
+
+[udisksctl]
+# permet de monter le contenu de périphérique (device)
+status : donne différente infos
+monitors : pour voir ce qui sepasse sur les ports usb
+mount -b <device> : montage block
+unmount -b <device> : démonte la partition
+
+[fdisk]
+#  besoin des droits root
+-l : liste toutes les partitions et donnes différentes info
+
+[mount]
+# besoin des droits root
+-t <type> <device> [option de montage] <path_ou_monter> : monte le système de ficher dans le dossier indiqué
+
+[umount]
+# besoin des droits root
+<device/point de montage> : démonte la partition
+
+[lsusb]
+#utilitaire pour lister l'activité des perts usb

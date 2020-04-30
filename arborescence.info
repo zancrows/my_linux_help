@@ -1,0 +1,81 @@
+|
+`-- /     racine, contient les répertoires principaux
+    |
+    `----    bin     contient les executables qui peuvent etre utilisé par tous
+    |                les utisateurs (lien vers /usr/bin)
+    |
+    `----    boot    fichiers permettant le démarrage de Linux
+    |                (fichiers statiques du chargeur d'amorce)
+    |
+    `----    dev     fichiers représentants les périphériques(disque dur, usb cd etc...)
+    |
+    `----    etc     Fichiers de configuration au format textuel de plusieurs
+    |                programmes et services du système
+    |
+    `----    home    répertoire personnel des utilisateurs
+    |
+    `----    lib     Bibliothèques partagées essentielles et modules du noyau
+    |                généralement des .so équivalent dll windows
+    |                (lien vers /usr/lib)
+    |
+    `----    lib64   idem que lib mais pour les 64bits
+    |
+    `----    mnt    Point de montage pour monter temporairement un système de fichiers
+    |        |
+    |        `----  media  dossier de montage des périphérique amovible 
+    |               (peut se trouver à la racine directement ou dans /run sur Arch par ex)
+    |
+    `----   lost+found  fournit un système d'objets perdus+trouvés (lost+found) 
+    |                   pour les fichiers se trouvant dans le répertoire racine (/)
+    |
+    `----   opt     Emplacement pour des applications installées
+    |               hors gestionnaire de paquets (logiciels optionnels)
+    |
+    `----   proc    n'existe pas physiquement sur un disque,
+    |               elle est créée par le noyau dans la mémoire.
+    |               Cette partition permet de donner des informations sur le système
+    |
+    `----   root    répertoire personnel du root
+    |
+    `----   sbin    Exécutables système essentiels, utilisable par le root
+    |               uniquement (lein vers /usr/sbin)
+    |
+    `----   run     informations relatives au système depuis son dernier démarrage
+    |               (ex : utilisateurs actifs, services en cours d'exécution, etc)
+    |
+    `----   srv      Données pour les services du système
+    |
+    `----   sys     équivalent à /proc, fichier système.
+    |
+    `----   tmp      répertoire des fichiers temporaires
+    |
+    `----   usr     Hiérarchie secondaire, pour des données en lecture seule
+    |       |       par les utilisateurs. Ce répertoire contient la vaste
+    |       |       majorité  des applications usuelles des utilisateurs
+    |       |       et leurs fichiers
+    |       |
+    |       `----   bin     voir /usr si lien, sinon contient les executables
+    |       |               pas indispensables au fonctionnement du système
+    |       |
+    |       `----   sbin    idem que pour /usr/bin mais pour les executables root
+    |       |
+    |       |
+    |       `----   lib     Ne contient que des répertoires ou liens symboliques
+    |       |               vers d'autres répertoires, ces derniers étant destinés
+    |       |               à contenir des fichiers variables divers
+    |       |
+    |       |
+    |       `----   share   Bibliothèques partagées par les applications
+    |       |               additionnelles de /usr/bin et /usr/sbin
+    |       |
+    |       |
+    |       `----   local   Hiérarchie tertiaire. Emplacement où les utilisateurs
+    |                       doivent installer les applications qu'ils compilent.
+    |
+    `----   var     Ne contient que des répertoires ou liens symboliques vers
+                    d'autres répertoires, ces derniers étant destinés à contenir
+                    des fichiers variables divers
+
+
+
+

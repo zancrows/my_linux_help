@@ -1,0 +1,36 @@
+[systemctl]
+list-units --type=service [--all]: affiche tous les services actifs [--all: pas que les services actifs]
+--failed: voir tous les services qui ont un pronblème
+--system daemon-reload: recharge systemd
+
+start   <service>: execute le service
+restart <service>: redémarre un service
+reload  <service>: recharge la configuration
+stop    <service>: arrete le service
+enable  <service>: active le service au démarrage
+disable <service>: désactive le service
+kill    <service>: envoi un signal d'arret (SIGTERM)
+mask    <service>: empecher l'activation d'un service
+unmask  <service>: contraire de 'mask'
+status  <service>: affiche le status du service
+
+isolate     <target>: changer de runlevel
+set-default <target>: changer de runlevel par défaut
+get-default         : connaitre son niveau d'execution(run-level)
+
+################################### les différents runlevel ################################################################
+#   systemd                             SysVinit            utilité                                                        #
+# poweroff.target - runlevel0.target    --> 0         --> Arret du système                                                 #
+# rescue.target - runlevel1.target      --> 1         --> Mode utilisateur unique, mode maintenance                        #
+# multi-user.targer - runlevel3.target  --> 3         --> mode multi user non graphique                                    #
+# multi-user.target - runlelevel2/4     --> 2/4       --> meme que 3 (dépand des distributions)                            #
+# graphical.target - runlevel5          --> 5         --> mode multi user graphique                                        #
+# reboot.target - runlevel6             --> 6         --> redémmarage                                                      #
+# emergency.target                      --> emergency --> shell d'urgence, avec système de fichiers monté en lecture seule #
+############################################################################################################################
+
+
+is-active  <service> : vérifie si le service est démarré
+is-failed  <service> : vérifie si le service à échoué au démarrage
+is-enabled <service> : vérifie si le service sera lancer au démarrage
+

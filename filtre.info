@@ -1,0 +1,48 @@
+
+[find]
+[path] -name <"fichier"> : recherche le nom de fichier a partir du ~
+                         ou du path indiqué
+-size [-/+] <k/M/G> : recherche par taille de fichier
+-type <d/f> : recherche par type 'd' pour repertoire et 'f' pour fichier
+-atime [-/+] <0..6> : recherche par date du dernier accès des 7 derniers jours
+-delete : supprime les fichiers trouvés
+-exec <commande>{} \; : applique la commande à tous le fichiers trouvés
+                        {} seront remplacées par le nom du fichier
+                        \; est obligatoire
+
+
+[grep]
+# utiliser pour filtrer
+mot_rechercher fichier: recherche le mot dans le fichier
+-i : ne pas tenir compte de la casse
+-n : indique le numéro de ligne
+-v : inverse la recherche
+-r : repertoire: recherche récursive
+-E : pour utiliser une expression régulière
+
+[cut]
+# couper une partie fu fichier
+-c <fin-debut> : coupe par caractère
+-d <delimiteur> : indique sur quel délimiteur
+-f num[,num..] : indique le numéro du champs à couper (a utiliser avec -d)
+
+
+[sort]
+#seul trie dans l'ordre alphabétique
+-o : écrit le résultat dans un  fichier
+-r : trie dans l'ordre inverse
+-R : trie aléatoire
+-n : trie des nombre
+
+[wc]
+#compte le nombre de lignes, mots, octets
+-l : pour avoir que les lignes
+-w : pour avoir que les mots
+-c : pour avoir que les octets
+-m : compter le nombre de caractères
+
+[uniq]
+# supprime les doublons
+-c : compte le nombre d'occurence
+-d : affiche uniquement les lignes en double
+
